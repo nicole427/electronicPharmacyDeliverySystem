@@ -7,7 +7,7 @@ public class Payment {
 
     private Payment(Builder builder)
     {
-        this.paymentStatus = builder.paymentStatus
+        this.paymentStatus = builder.paymentStatus;
         this.paymentType = builder.paymentType;
         this.pharmacyBankDetails = builder.pharmacyBankDetails;
         this.paymentTotal = builder.paymentTotal;
