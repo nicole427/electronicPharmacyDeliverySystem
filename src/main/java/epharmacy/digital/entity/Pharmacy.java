@@ -31,7 +31,8 @@ public class Pharmacy {
     }
 
     // add setters using building pattern
-    public static class Builder{
+    public static class Builder
+    {
         private int pharmacyID;
         private String pharmacyName;
 
