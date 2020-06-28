@@ -28,8 +28,8 @@ public class CatItem {
             return this;
         }
 
-        public CatItem.Builder copy(CatItem cattype){
-            this.itemType = cattype.itemType;
+        public CatItem.Builder copy(CatItem catitem){
+            this.itemType = catitem.itemType;
             return this;
         }
 
