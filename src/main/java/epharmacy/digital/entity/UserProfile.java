@@ -1,17 +1,17 @@
 package epharmacy.digital.entity;
 
 public class UserProfile {
-// all the attributes of entity
+    // all the attributes of entity
     private int userId;
     private String userName, userSurname;
 
-// builder pattern method constructor
+    // builder pattern method constructor
     private UserProfile(Builder builder){
-    this.userId = builder.userId;
-    this.userName = builder.userName;
-    this.userSurname = builder.userSurname;
+        this.userId = builder.userId;
+        this.userName = builder.userName;
+        this.userSurname = builder.userSurname;
     }
-// getters for all attributes of entity UserProfile
+    // getters for all attributes of entity UserProfile
     public int getUserId() {
 
         return userId;
@@ -26,7 +26,7 @@ public class UserProfile {
 
         return userSurname;
     }
-// to string to display what is in the class
+    // to string to display what is in the class
     @Override
     public String toString() {
         return "UserProfile{" +
@@ -35,7 +35,7 @@ public class UserProfile {
                 ", userSurname='" + userSurname + '\'' +
                 '}';
     }
-// add setters using builder pattern
+    // add setters using builder pattern
     public static class Builder{
 
         private int userId;
@@ -53,7 +53,7 @@ public class UserProfile {
             this.userSurname = userSurname;
             return this;
         }
-    //to below method is to make another copy of userProfile
+        //to below method is to make another copy of userProfile
         public Builder copy (UserProfile userProfile){
             this.userId = userProfile.userId;
             this.userName = userProfile.userName;

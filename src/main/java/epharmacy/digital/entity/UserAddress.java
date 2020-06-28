@@ -2,11 +2,11 @@ package epharmacy.digital.entity;
 
 public class UserAddress {
     //assigning all the attributes with their values
-private String streetName;
-private int streetNumber;
-private int areaCode;
-private String areaName;
-//constructor method for builder class
+    private String streetName;
+    private int streetNumber;
+    private int areaCode;
+    private String areaName;
+    //constructor method for builder class
     private UserAddress(Builder builder){
         this.streetName = builder.streetName;
         this.streetNumber = builder.streetNumber;

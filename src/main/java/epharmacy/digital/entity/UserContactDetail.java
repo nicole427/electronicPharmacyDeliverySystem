@@ -3,12 +3,12 @@ package epharmacy.digital.entity;
 public class UserContactDetail {
     private int cellPhoneNumber;
     private int homePhone;
-//userContactDetail builder constructor
+    //userContactDetail builder constructor
     private UserContactDetail(Builder builder){
         this.cellPhoneNumber = builder.cellPhoneNumber;
         this.homePhone = builder.homePhone;
     }
-//get methods for all the attributes
+    //get methods for all the attributes
     public int getCellPhoneNumber() {
         return cellPhoneNumber;
     }
@@ -16,7 +16,7 @@ public class UserContactDetail {
     public int getHomePhone() {
         return homePhone;
     }
-//to string to display all the attributes
+    //to string to display all the attributes
     @Override
     public String toString() {
         return "UserContactDetail{" +
@@ -24,7 +24,7 @@ public class UserContactDetail {
                 ", homePhone=" + homePhone +
                 '}';
     }
-  //builder pattern class for the setters of the attributes
+    //builder pattern class for the setters of the attributes
     public static class Builder{
         private int cellPhoneNumber;
         private int homePhone;
