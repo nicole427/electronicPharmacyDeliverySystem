@@ -33,6 +33,17 @@ public class PharmacyLocation {
         return locationCode;
     }
 
+    // to string method for PharmacyLocation entity
+    @Override
+    public String toString() {
+        return "PharmacyLocation{" +
+                "locationStreetName='" + locationStreetName + '\'' +
+                ", locationStreetNumber=" + locationStreetNumber +
+                ", locationName='" + locationName + '\'' +
+                ", locationCode=" + locationCode +
+                '}';
+    }
+
     // add setters using building pattern
     private static class Builder {
         private String locationStreetName;
@@ -60,7 +71,7 @@ public class PharmacyLocation {
             return this;
         }
 
-        // Copy method for Pharmacy entity
+        // Copy method for PharmacyLocation entity
         public Builder copy(PharmacyLocation pharmacyLocation)
         {
             this.locationStreetName = pharmacyLocation.locationStreetName;
