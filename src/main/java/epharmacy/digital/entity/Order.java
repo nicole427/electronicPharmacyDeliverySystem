@@ -2,33 +2,33 @@ package epharmacy.digital.entity;
 
 public class Order {
 
-    private int orderNum;
-    private String orderName;
+    private int orderNumber;
+    private int UserId;
     private double orderTotal;
 
     private Order(Builder builder){
 
-        this.orderNum = builder.orderNum;
-        this.orderName = builder.orderName;
+        this.orderNumber = builder.orderNumber;
+        this.UserId = builder.userId;
         this.orderTotal = builder.orderTotal;
     }
 
     public String toString(){
 
         return "Order Details:" +
-                "Order Number:" + orderNum + '\'' +
-                "Order Name: " + orderName + '\'' +
+                "Order Number:" + orderNumber + '\'' +
+                "Order Name: " + UserId + '\'' +
                 "Order Total:" + orderTotal;
 
     }
 
-    public int getOrderNum() {
-        return orderNum;
+    public int getOrderNumber() {
+        return orderNumber;
     }
 
-    public String getOrderName(){
+    public int getUserId(){
 
-        return orderName;
+        return UserId;
     }
 
     public double getOrderTotal() {
@@ -37,17 +37,18 @@ public class Order {
 
     public static class Builder{
 
-        private int orderNum;
-        private String orderName;
+        private int orderNumber;
+        private int userId;
         private double orderTotal;
 
-        public void setOrderNum(int orderNum) {
-            this.orderNum = orderNum;
+        public void setOrderNum(int orderNumber) {
+            this.orderNumber = orderNumber;
 
         }
 
-        public void setOrderName(String orderName) {
-            this.orderName = orderName;
+        public void setUserId(int userId) {
+
+            this.userId = userId;
         }
 
         public void setOrderTotal(double orderTotal) {

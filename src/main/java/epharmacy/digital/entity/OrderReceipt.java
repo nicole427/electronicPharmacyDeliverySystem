@@ -3,15 +3,17 @@ package epharmacy.digital.entity;
 public class OrderReceipt {
 
     private int orderNumber;
-    private String itemName;
-    private int itemQty;
+    private int userId;
+    private String catalogueItemName;
+    private int catalogueItemQty;
     private double orderTotal;
 
     private OrderReceipt(Builder builder){
 
         this.orderNumber = builder.orderNumber;
-        this.itemName = builder.itemName;
-        this.itemQty = builder.itemQty;
+        this.userId = builder.userId;
+        this.catalogueItemName = builder.catalogueItemName;
+        this.catalogueItemQty = builder.catalogueItemQty;
         this.orderTotal = builder.orderTotal;
 
     }
@@ -20,8 +22,9 @@ public class OrderReceipt {
     public String toString() {
         return "OrderReceipt{" +
                 "orderNumber=" + orderNumber +
-                ", itemName='" + itemName + '\'' +
-                ", itemQty=" + itemQty +
+                ", userId='" + userId + '\'' +
+                ", CatalogueItemQty=" + catalogueItemQty +
+                ", CatalogueItemName=" + catalogueItemName +
                 ", orderTotal=" + orderTotal +
                 '}';
     }
@@ -30,12 +33,13 @@ public class OrderReceipt {
         return orderNumber;
     }
 
-    public String getItemName() {
-        return itemName;
+    public int getUserId() {
+        return userId;
     }
+    public String getCatalogueItemName(){return catalogueItemName;}
 
-    public int getItemQty() {
-        return itemQty;
+    public int getCatalogueItemQty() {
+        return catalogueItemQty;
     }
 
     public double getOrderTotal() {
@@ -44,29 +48,49 @@ public class OrderReceipt {
 
     public static class Builder{
 
+
         private int orderNumber;
-        private String itemName;
-        private int itemQty;
+        private int userId;
+        private String catalogueItemName;
+        private int catalogueItemQty;
         private double orderTotal;
 
-        public void setOrderNumber(int orderNumber) {
+
+        public Builder setOrderNumber(int orderNumber) {
             this.orderNumber = orderNumber;
+            return this;
         }
 
-        public void setItemName(String itemName) {
-            this.itemName = itemName;
+        public Builder setUserId(int userId) {
+            this.userId = userId;
+            return this;
+        }
+        public Builder setCatalogueItemName(String catalogueItemName) {
+            this.catalogueItemName = catalogueItemName;
+            return this;
+        }
+        public Builder setCatalogueItemQty(int catalogueItemQty) {
+
+            this.catalogueItemQty = catalogueItemQty;
+            return this;
         }
 
-        public void setItemQty(int itemQty) {
-            this.itemQty = itemQty;
-        }
+        public Builder setOrderTotal(double orderTotal) {
 
-        public void setOrderTotal(double orderTotal) {
             this.orderTotal = orderTotal;
+            return this;
         }
-
-        public OrderReceipt build(){
+        public Builder copy(OrderReceipt orderReceipt){
+            this.orderNumber= orderReceipt.orderNumber;
+            this.catalogueItemName = orderReceipt.catalogueItemName;
+            this.catalogueItemQty = orderReceipt.catalogueItemQty;
+            this.userId = orderReceipt.userId;
+            this.orderTotal = orderReceipt.orderTotal;
+            return this;
+        }
+        public OrderReceipt builder(){
             return new OrderReceipt(this);
         }
     }
+
 }

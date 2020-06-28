@@ -5,7 +5,7 @@ public class DriverLocation {
     private int currentDriverLocation;
 
     // builder pattern method constructor
-    private DriverLocation(DriverLocation.Builder builder){
+    private DriverLocation(Builder builder){
         this.currentDriverLocation = builder.currentDriverLocation;
     }
     // getters for all attributes of entity UserProfile
@@ -25,13 +25,13 @@ public class DriverLocation {
 
         private int currentDriverLocation;
 
-        public DriverLocation.Builder setCurrentDriverLocation(int currentDriverLocation){
+        public Builder setCurrentDriverLocation(int currentDriverLocation){
             this.currentDriverLocation = currentDriverLocation;
             return this;
         }
 
         //to below method is to make another copy of DriverCar
-        public DriverLocation.Builder copy (DriverLocation driverLocation){
+        public Builder copy (DriverLocation driverLocation){
             this.currentDriverLocation = driverLocation.currentDriverLocation;
             return this;
         }

@@ -3,11 +3,11 @@ package epharmacy.digital.entity;
 public class PharmacyContactDetails {
     // all the attributes of entity
     private int landlineNumber;
-    private int mobileNumber;
+    private int cellPhoneNumber;
 
     public PharmacyContactDetails(Builder builder) {
         this.landlineNumber = builder.landlineNumber;
-        this.mobileNumber = builder.mobileNumber;
+        this.cellPhoneNumber = builder.cellPhoneNumber;
     }
 
     // getters for all attributes of entity PharmacyContactDetails
@@ -15,8 +15,8 @@ public class PharmacyContactDetails {
         return landlineNumber;
     }
 
-    public int getMobileNumber() {
-        return mobileNumber;
+    public int getCellPhoneNumber() {
+        return cellPhoneNumber;
     }
 
     // to string method for PharmacyContactDetails entity
@@ -24,7 +24,7 @@ public class PharmacyContactDetails {
     public String toString() {
         return "PharmacyContactDetails{" +
                 "landlineNumber=" + landlineNumber +
-                ", mobileNumber=" + mobileNumber +
+                ", mobileNumber=" + cellPhoneNumber +
                 '}';
     }
 
@@ -32,15 +32,15 @@ public class PharmacyContactDetails {
     public static class Builder
     {
         private int landlineNumber;
-        private int mobileNumber;
+        private int cellPhoneNumber;
 
         public Builder setLandlineNumber(int landlineNumber) {
             this.landlineNumber = landlineNumber;
             return this;
         }
 
-        public Builder setMobileNumber(int mobileNumber) {
-            this.mobileNumber = mobileNumber;
+        public Builder setMobileNumber(int cellPhoneNumber) {
+            this.cellPhoneNumber = cellPhoneNumber;
             return this;
         }
 
@@ -48,7 +48,7 @@ public class PharmacyContactDetails {
         public Builder copy (PharmacyContactDetails pharmacyContactDetails)
         {
             this.landlineNumber = pharmacyContactDetails.landlineNumber;
-            this.mobileNumber = pharmacyContactDetails.mobileNumber;
+            this.cellPhoneNumber = pharmacyContactDetails.cellPhoneNumber;
             return this;
         }
 

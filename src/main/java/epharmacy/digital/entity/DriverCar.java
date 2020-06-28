@@ -6,7 +6,7 @@ public class DriverCar {
     private String carColour;
 
     // builder pattern method constructor
-    private DriverCar(DriverCar.Builder builder){
+    private DriverCar(Builder builder){
         this.carRegistration = builder.carRegistration;
         this.carColour = builder.carColour;
     }
@@ -33,17 +33,17 @@ public class DriverCar {
         private int carRegistration;
         private String carColour;
 
-        public DriverCar.Builder setCarRegistration(int carRegistration){
+        public Builder setCarRegistration(int carRegistration){
             this.carRegistration = carRegistration;
             return this;
         }
-        public DriverCar.Builder setCarColour(String carColour){
+        public Builder setCarColour(String carColour){
             this.carColour= carColour;
             return this;
         }
 
         //to below method is to make another copy of DriverCar
-        public DriverCar.Builder copy (DriverCar driverCar){
+        public Builder copy (DriverCar driverCar){
             this.carRegistration = driverCar.carRegistration;
             this.carColour = driverCar.carColour;
             return this;
