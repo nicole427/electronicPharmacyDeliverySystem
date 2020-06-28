@@ -3,42 +3,79 @@ package epharmacy.digital.entity;
 public class Payment {
     private String paymentStatus;
 
+    private String paymentType, pharmacyBankDetails;
+    private int paymentTotal;
+
     private Payment(Builder builder)
     {
-        this.paymentStatus = builder.paymentStatus;
+      this.paymentStatus = builder.paymentStatus;
+      this.paymentType = builder.paymentType;
+      this.pharmacyBankDetails = builder.pharmacyBankDetails;
+      this.paymentTotal = builder.paymentTotal;      
+      return this;
     }
     // Getters
     public String getPaymentStatus() {
         return paymentStatus;
     }
-
+    public String getPaymentType() {
+        return paymentType;
+    }
+    public String getPharmacyBankDetails() {
+        return pharmacyBankDetails;
+    }
+    public String getPaymentTotal() {
+        return paymentTotal;
+    }
+ 
     @Override
-    // ToString method for printing/displaying
     public String toString() {
         return "Payment{" +
-                "paymentStatus='" + paymentStatus + '\'' +
+                "paymentType=" + paymentType +
+                ", pharmacyBankDetails=" + pharmacyBankDetails +
+                ", paymentTotal=" + paymentTotal +
+                ", paymentStatus=" + paymentStatus +
                 '}';
     }
-    // Builder class for the payment method
+
     public static class Builder
     {
         private String paymentStatus;
-
-
-        public Builder setPaymentStatus(String paymentStatus)
-        {
-            this.paymentStatus = paymentStatus;
+        private String paymentType, pharmacyBankDetails;
+        private int paymentTotal;
+        
+        public Builder setPaymentStatus(String paymentStatus){
+        this.paymentStatus = paymentStatus;
             return this;
         }
 
-        // Not sure if this is necessary considering its one attribute but including for completeness
-        public Builder copy (Payment Payment)
-        {
-            this.paymentStatus = Payment.paymentStatus;
+        public Builder setPaymentType(String paymentType) {
+            this.paymentType = paymentType;
             return this;
         }
-        // Creating an instance for the builder pattern
-        public Payment builder(){
+
+        public Builder setPharmacyBankDetails(String pharmacyBankDetails)
+        {
+            this.pharmacyBankDetails = pharmacyBankDetails;
+            return this;
+        }
+
+        public Builder setPaymentTotal(int paymentTotal)
+        {
+            this.paymentTotal = paymentTotal;
+            return this;
+        }
+        public Builder copy(Payment payment){
+            this.paymentStatus = payment.paymentStatus;
+            this.paymentType = payment.paymentType;
+            this.pharmacyBankDetails = payment.pharmacyBankDetails;
+            this.paymentTotal = payment.paymentTotal;
+
+            return this;
+        }
+
+        public Payment builder()
+        {
             return new Payment(this);
         }
 

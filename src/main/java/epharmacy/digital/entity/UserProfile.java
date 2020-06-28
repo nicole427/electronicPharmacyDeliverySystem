@@ -13,14 +13,17 @@ public class UserProfile {
     }
 // getters for all attributes of entity UserProfile
     public int getUserId() {
+
         return userId;
     }
 
     public String getUserName() {
+
         return userName;
     }
 
     public String getUserSurname() {
+
         return userSurname;
     }
 // to string to display what is in the class
@@ -32,7 +35,7 @@ public class UserProfile {
                 ", userSurname='" + userSurname + '\'' +
                 '}';
     }
-// add setters using building pattern
+// add setters using builder pattern
     public static class Builder{
 
         private int userId;
@@ -59,6 +62,7 @@ public class UserProfile {
         }
         // creating an instance for the builder pattern
         public UserProfile builder(){
+
             return new UserProfile(this);
         }
     }
