@@ -1,17 +1,21 @@
 package epharmacy.digital.entity;
 
 public class Payment {
-
+    private String paymentStatus;
     private String paymentType, pharmacyBankDetails;
     private int paymentTotal;
 
     private Payment(Builder builder)
     {
+        this.paymentStatus = builder.paymentStatus
         this.paymentType = builder.paymentType;
         this.pharmacyBankDetails = builder.pharmacyBankDetails;
         this.paymentTotal = builder.paymentTotal;
     }
 
+    public String getPaymentStatus() {
+        return paymentStatus;
+    }
     public String getPaymentType() {
         return paymentType;
     }
@@ -30,15 +34,20 @@ public class Payment {
                 "paymentType=" + paymentType +
                 ", pharmacyBankDetails=" + pharmacyBankDetails +
                 ", paymentTotal=" + paymentTotal +
+                ", paymentStatus=" + paymentStatus +
                 '}';
     }
 
     public static class Builder
     {
-
+        private String paymentStatus;
         private String paymentType, pharmacyBankDetails;
         private int paymentTotal;
-
+        
+        public Builder setPaymentStatus(String paymentStatus){
+        this.paymentStatus = paymentStatus;
+            return this;
+        }
 
         public Builder setPaymentType(String paymentType) {
             this.paymentType = paymentType;
@@ -56,10 +65,11 @@ public class Payment {
             this.paymentTotal = paymentTotal;
             return this;
         }
-        public Builder copy(Payment Payment){
-            this.paymentType = Payment.paymentType;
-            this.pharmacyBankDetails = Payment.pharmacyBankDetails;
-            this.paymentTotal = Payment.paymentTotal;
+        public Builder copy(Payment payment){
+            this.paymentStatus = payment.paymentStatus;
+            this.paymentType = payment.paymentType;
+            this.pharmacyBankDetails = payment.pharmacyBankDetails;
+            this.paymentTotal = payment.paymentTotal;
 
             return this;
         }
