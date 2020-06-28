@@ -2,32 +2,32 @@ package epharmacy.digital.entity;
 
 public class Payment {
     private String paymentStatus;
+
     private String paymentType, pharmacyBankDetails;
     private int paymentTotal;
 
     private Payment(Builder builder)
     {
-        this.paymentStatus = builder.paymentStatus;
-        this.paymentType = builder.paymentType;
-        this.pharmacyBankDetails = builder.pharmacyBankDetails;
-        this.paymentTotal = builder.paymentTotal;
+      this.paymentStatus = builder.paymentStatus;
+      this.paymentType = builder.paymentType;
+      this.pharmacyBankDetails = builder.pharmacyBankDetails;
+      this.paymentTotal = builder.paymentTotal;      
+      return this;
     }
-
+    // Getters
     public String getPaymentStatus() {
         return paymentStatus;
     }
     public String getPaymentType() {
         return paymentType;
     }
-
     public String getPharmacyBankDetails() {
         return pharmacyBankDetails;
     }
-
-    public int getPaymentTotal() {
+    public String getPaymentTotal() {
         return paymentTotal;
     }
-
+ 
     @Override
     public String toString() {
         return "Payment{" +
